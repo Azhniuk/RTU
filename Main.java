@@ -16,7 +16,7 @@ public class Main {
             a1 = Math.round(a);
 
             if ((a - a1) == 0) {
-                System.out.println(a1 + "   DDD " + b);
+                System.out.println(a1 + "  " + b);
                 break;
 
             }

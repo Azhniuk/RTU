@@ -40,10 +40,8 @@ def arrayCreation (xBeg, yBeg, xEnd, yEnd):
             if pn > 0:
                 y = y + ys
             else:
-                
-                
-            yCoordinates.append(y)
-            pn = pn + (2*dy)    
+                yCoordinates.append(y)
+                pn = pn + (2*dy)    
 
 
 

@@ -6,15 +6,12 @@ plt.ylabel("y axis")
 
 
 
-xBeg, x = 0
-yBeg, y = 0
-xEnd = 6
-yEnd = 3
-xCoordinates = [xBeg]
-yCoordinates = [yBeg]
+
 
 
 def arrayCreation (xBeg, yBeg, xEnd, yEnd):
+    xCoordinates = [xBeg]
+    yCoordinates = [yBeg]
     dx = abs(xEnd - xBeg)
     dy = abs(yEnd - yBeg)
     
@@ -30,23 +27,23 @@ def arrayCreation (xBeg, yBeg, xEnd, yEnd):
         ys = -1
 
     if dx > dy:
-        p0 = 2*dy - dx
-        pn = p0
+        p = 2*dy - dx
+        pn = p
         for x in range (dx):
-            xCoordinate = x + xs
-            xCoordinates.append(xCoordinate)
+            x = x + xs
+            xCoordinates.append(x)
         
         for y in range (dy):
             if pn > 0:
                 y = y + ys
-            else:
-                yCoordinates.append(y)
-                pn = pn + (2*dy)    
+            yCoordinates.append(y)
+            pn = pn + (2*dy)  
+    return
 
 
 
-        print(xCoordinates)
-        print(yCoordinates)
+print(xCoordinates)
+print(yCoordinates)
         
         
 
@@ -59,6 +56,6 @@ def arrayCreation (xBeg, yBeg, xEnd, yEnd):
 
 
 
-arrayCreation (xBeg, yBeg, xEnd, yEnd)
+arrayCreation (0, 0, 5, 4)
 #plt.plot(xCoordinates, yCoordinates)
-plt.show()
+#plt.show()

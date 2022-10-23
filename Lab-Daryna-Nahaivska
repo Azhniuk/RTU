@@ -1,0 +1,33 @@
+/*Ім'я фамілія Variant 21*/
+// Підключення бібліотек;
+#include <stdio.h>
+#include <math.h>
+#define N 255 
+int main() {
+	// Оголошеннх та ініціалізація деяких
+	double y, z, t;
+	double x, a;
+	int b=2,c=5;
+	double temp;
+	// Виведення на екран вигляд функцій f1, f2, f3;
+	printf("funtzia F1: sqrt((x + a) / (2*x + 5)) + fabs(sin(x) - 2) \n" );
+	printf("funtzia F2: x * (4.5 + 0.3*x + exp(1 / *tan(2*x))) \n");
+	printf("funtzia F3: 0.5 * pow(x, 6.3); \n");
+	// Введення параметра і зміної;
+	printf("vvedit' parametr 'a' ta zminu 'x': \n");
+	//scanf_s("%lf %lf", &a, &x);
+	// Розрахунок значення функцій;
+	y = sqrt((x + a) / (b * x + c)) + fabs(sin(x) - b);
+	z = x * (4.5 + 0.3 * x + exp(1 /  tan(2 * x)));
+	t = 0.5*pow(x, 6.3);
+	// Виведення на екран результатів розрахунку функцій;
+	printf(" y = %0.5lf\n z = %0.5lf\n t = %0.5lf\n", y, z, t);
+	// Заміна по кругу значень;
+	temp = y;
+	y = z;
+	z = t;
+	t = temp;
+	// Виведення змінених значень;
+	printf("\n y = %0.5lf\n z = %0.5lf\n t = %0.5lf \n", y, z, t);
+	return 0;
+}

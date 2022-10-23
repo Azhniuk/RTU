@@ -4,20 +4,26 @@
 #include <math.h>
 #define N 255 
 int main() {
-	// Оголошеннх та ініціалізація деяких
-	double y, z, t;
+	// Оголошеннх та ініціалізація деяких змінних
 	double x, a;
-	int b=2,c=5;
+	double y, z, t;
+	
+	const int A = 2, B = 5;
 	double temp;
-	// Виведення на екран вигляд функцій f1, f2, f3;
-	printf("funtzia F1: sqrt((x + a) / (2*x + 5)) + fabs(sin(x) - 2) \n" );
-	printf("funtzia F2: x * (4.5 + 0.3*x + exp(1 / *tan(2*x))) \n");
-	printf("funtzia F3: 0.5 * pow(x, 6.3); \n");
-	// Введення параметра і зміної;
-	printf("vvedit' parametr 'a' ta zminu 'x': \n");
-	//scanf_s("%lf %lf", &a, &x);
-	// Розрахунок значення функцій;
-	y = sqrt((x + a) / (b * x + c)) + fabs(sin(x) - b);
+	
+	// Вивести на екран вигляд заданих функцій f1, f2, f3
+	printf("Функція F1: (x - 3*a) / (2 + sqrt(x - 3) - tan (fabs(x - 2))) \n" );
+	printf("Функція F2: (7/2)* pow(x, 3) - (3/10)*x + exp(1 / tan(x)) \n");
+	printf("Функція F3: (2/5)* pow(x, 3.8) \n");
+	
+	// Введення параметра "a" та зміної "x"
+	printf("Введіть параметр 'a' та змінну 'x': \n");
+	scanf("%lf %lf", &a, &x);
+	
+	// Розрахунок значення функцій F1, F2, F3 для змінних y, z, t
+	y =  ((x - 3*a)/(A + sqrt(x - B) )) - tan(abs(x - A));
+	printf("%lf", y);
+//	sqrt((x + a) / (b * x + c)) + fabs(sin(x) - b);
 	z = x * (4.5 + 0.3 * x + exp(1 /  tan(2 * x)));
 	t = 0.5*pow(x, 6.3);
 	// Виведення на екран результатів розрахунку функцій;

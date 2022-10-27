@@ -5,7 +5,7 @@ Python
 
 2. Bezier curve algorithm <br />
 <strong>Algorithm</strong>
-<img src="https://user-images.githubusercontent.com/79833361/198325866-31559d1a-b99a-44af-957c-86047cbddcd0.png"  width="700"/>
+<img src="https://user-images.githubusercontent.com/79833361/198325866-31559d1a-b99a-44af-957c-86047cbddcd0.png"  width="600"/>
 
 
 

@@ -2,16 +2,16 @@
 int main()
 {
     int i;
-    char word[10];
+    int len = 1000;
+    char word[len];
     
-    printf("Enter name: ");
-    scanf("%s", word);
+    printf("Enter a word: ");
+    fgets(word, len, stdin);
     
-    for (i = 0; i <= 10; i++){
+    for (i = 0; i <= len; i++){
         if (word[i] == ' '){
             word[i] = '_';
         }
-        printf("%c", word[i]);
     }
     
     printf( "%s", word);

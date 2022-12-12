@@ -1,14 +1,7 @@
-/******************************************************************************
-
-                            Online C Compiler.
-                Code, Compile, Run and Debug C program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 
 void output( int drow, int dcol, int arr[drow][dcol]) {
@@ -20,7 +13,8 @@ void output( int drow, int dcol, int arr[drow][dcol]) {
     }
 }
 
-void min( int drow, int dcol, int arr[drow][dcol]) {
+
+int min( int drow, int dcol, int arr[drow][dcol]) {
     int min = arr[0][0];
     for (int i = 0; i < drow; i++){
         for (int j = 0; j < dcol; j++) {
@@ -29,8 +23,21 @@ void min( int drow, int dcol, int arr[drow][dcol]) {
             }
         }
     }
-    min = abs(min);
-    printf("Module of min: %d", min); 
+    return min;
+}
+
+
+int max( int drow, int dcol, int arr[drow][dcol]) {
+    int max = arr[0][0];
+    for (int i = 0; i < drow; i++){
+        for (int j = 0; j < dcol; j++) {
+            if (max < arr[i][j]){
+                max = arr[i][j];
+            }
+        }
+    }
+
+    return max;
 }
 
 
@@ -39,8 +46,8 @@ void min( int drow, int dcol, int arr[drow][dcol]) {
 int main()
 {
     const int drow = 3, dcol = 3;
-    int array [drow][dcol];
-    int a = 4;
+    int array [drow][dcol], a, b;
+    
     
     for (int i = 0; i < drow; i++){
         for (int j = 0; j < dcol; j++) {
@@ -50,7 +57,14 @@ int main()
 
 //functions
     output(drow, dcol, array);
-    min(drow, dcol, array);
+    a = min(drow, dcol, array);
+    b = max(drow, dcol, array);
+    
+    
+    
+    
+    printf("Module of minimum: %d \n", abs(a));
+    printf("Square root of maximum: %f \n", sqrt((double)b));
     
    
     return 0;

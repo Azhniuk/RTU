@@ -11,15 +11,29 @@ Write your code in this editor and press "Run" button to compile and execute it.
 #include <time.h>
 
 
-void output( int drow, int dcol, int arr[][]) {
+void output( int drow, int dcol, int arr[drow][dcol]) {
     for (int i = 0; i < drow; i++){
         for (int j = 0; j < dcol; j++) {
             printf("%d ", arr[i][j]);
         }
         printf("\n"); 
     }
-    
 }
+
+void min( int drow, int dcol, int arr[drow][dcol]) {
+    int min = arr[0][0];
+    for (int i = 0; i < drow; i++){
+        for (int j = 0; j < dcol; j++) {
+            if (min > arr[i][j]){
+                min = arr[i][j];
+            }
+        }
+    }
+    min = abs(min);
+    printf("Module of min: %d", min); 
+}
+
+
 
 
 int main()
@@ -28,18 +42,16 @@ int main()
     int array [drow][dcol];
     int a = 4;
     
-    for (i = 0; i < drow; i++){
-        for (j = 0; j < dcol; j++) {
+    for (int i = 0; i < drow; i++){
+        for (int j = 0; j < dcol; j++) {
             array[i][j] = rand() % 16-10;
-            printf("%d ", array[i][j]);
         }
-        printf("\n"); 
     }
-    printf("\n"); 
+
+//functions
+    output(drow, dcol, array);
+    min(drow, dcol, array);
     
-    
-    
-    output( drow, dcol, array);
    
     return 0;
 }

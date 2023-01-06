@@ -1,2 +1,3 @@
 # RTU
-1. Determinant calculation December 2022
+<li> <strong> RTU/Python/Computer Graphics and Image Processing/ </strong>
+<li> Determinant calculation December 2022

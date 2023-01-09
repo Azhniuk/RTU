@@ -1,0 +1,158 @@
+<head>
+    <style>
+        .txt{
+            padding: 15px 40px 15px;;
+        }
+        .bl{
+            font-size: x-large;
+            color:blue;
+            text-align: center;
+            font-weight: bolder ;
+        }
+
+        .heavy{
+            font-weight: bolder ;
+        }
+
+        .butt{
+            border: none;
+            padding: 15px 150px 20px;
+            background-color: transparent;
+            font-size: 18px;
+        }
+
+        .glow-butt:hover{
+            background-color: rgb(253, 241, 226);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .dispossable{
+            font-size: large;
+        }
+
+        .button {
+            display: block;
+            margin:0 auto; 
+            background-color: rgb(8, 12, 255);
+            color: #ffffff;
+            padding: 15px 40px 15px;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 56px;
+            outline: none;
+            transition: all 0.2s ease-in-out;
+
+        }
+
+          .glow-button:hover {
+              background-color: #ffffff;
+              color:rgb(8, 12, 255);
+    /*box-shadow:  0 5px 15px  rgba(63, 63, 254, 0.908);*/
+         cursor: pointer;
+}
+
+        h2 {
+            color: #000000;
+            text-align: center;
+            font-weight: lighter;
+
+        }
+
+        ul {
+            padding: 15px 0px 15px;
+            text-align: center;
+
+
+        }
+
+        li {
+            list-style: none;
+            margin: 15px 0px 15px;
+        }
+
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class = "bl">🌤</h1>
+    <h2 class = "bl">
+        Currently 21° in Tokyo
+    </h2>
+    
+    <div class = "dispossable">13° /<span class = "heavy">23°</span></div>
+    
+
+    <ul>
+        <li>
+            <button class = "butt glow-butt">
+                <div class =  "heavy txt">🌧Tomorrow</div>
+                <div>
+                <span>10° /</span>
+                <span  class = "heavy">22°</span>
+                </div>
+            </button>
+        </li>
+        <li>
+            <button class = "butt glow-butt">
+              <div class = "heavy txt">🌥 Saturday</div>
+                <div>
+                    <span>15° /</span>
+                    <span  class =  "heavy">17°</span>
+                </div>
+            </button>
+        </li>
+        <li>
+            <button class = "butt glow-butt">
+                <div class="heavy txt">☀️ Sunday</div>
+                
+                <div>
+                    <span>25° /</span>
+                    <span  class =  "heavy">28°</span>
+                </div>
+            </button>
+        </li>
+    </ul>
+   
+
+    <button class="button glow-button"> Change city
+    </button>
+
+    <br>
+    <br>
+
+
+    <div> Coded by Azhniuk Sofi </div>
+    
+    <script> 
+
+    function changeCity() {
+        let city = prompt("What city do you live in?");
+        let temp = prompt("What temperature is it?");
+        if (temp >= 0) {
+            let h1 = document.querySelector("h1");
+            h1.innerHTML = "😄";
+        }
+        else {
+            let h1 = document.querySelector("h1");
+            h1.innerHTML = "☹️";
+        }
+        let h2 = document.querySelector("h2");
+        h2.innerHTML = "Currently " + temp + "° in " + city;
+    }
+    
+    let but = document.querySelector(".button");
+    but.addEventListener("click", changeCity);
+    
+    </script>
+</body>
+
+
+
+
+
+
+
+

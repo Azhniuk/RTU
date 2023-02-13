@@ -5,7 +5,7 @@ import javax.swing.*;*/
 
 
  
-public class Animanion_1 {
+public class Animanion{
     public static void main(String[] args) {
         new Frame();
   

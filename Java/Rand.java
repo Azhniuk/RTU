@@ -20,10 +20,7 @@ public class Rand {
             System.out.println("Noo");
         }
 
-        
-
-
-    
+       
 
 }
 }

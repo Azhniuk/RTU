@@ -4,13 +4,30 @@ public class Ex2 {
 
     public static void main(String[] args){
 
-    Scanner scan = new Scanner(System.in);
+
+        int i = 1;
+        Scanner scan = new Scanner(System.in);
+
+        Scanner scan1 = new Scanner(System.in);
+
+    do{
+        
     String line = scan.nextLine();
     count(line);
     spaces(line); 
+
+
+    i  = scan.nextInt();
+    
+
+
+        }while(i==1);
     scan.close();
+    scan1.close();
+
     }
 
+  
     public static void count(String line){
         System.out.println(line.length());
     return;

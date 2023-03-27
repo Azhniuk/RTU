@@ -6,17 +6,13 @@ import java.util.Scanner;
 import java.lang.Math;
 import java.io.File;  
 import java.io.FileNotFoundException;
-
-import java.io.*;
 import java.util.*;
 
 
 class Triangle {
   int a = 1, b, c;
 
-  public void askNumber(){
-    System.out.println("Enter side");
-     }
+
   public int perimeter(int a, int b, int c) {
     return a+b+c;
   }
@@ -41,10 +37,8 @@ class Triangle {
     }
     return null;
   }
+
 }
-
-
-
 class Shape extends Triangle {
   public int perimeter(int a, int b, int c) {
     return a + b + c;
@@ -71,7 +65,6 @@ class Main {
     Triangle shape = new Shape();  // Create a Dog object
     Scanner scan = new Scanner(System.in);  
     ArrayList<Integer> nums  = triangle.read();
-    triangle.askNumber();
     triangle.a  = nums.get(0); 
     triangle.b = nums.get(1); 
     triangle.c = nums.get(2); 
@@ -82,7 +75,7 @@ class Main {
     area = shape.area(triangle.a, triangle.b,triangle.c);
     System.out.println("Area is: "+ area);
 
-    
+
 
   }
 }

@@ -1,46 +1,55 @@
 
 /// Azhniuk Sofiia Variant 1 id: 221ADB207
 import java.util.Scanner;
+import java.lang.Math;
 
-class Shape {
+
+class Triangle {
+  int a = 1, b, c;
   public void askNumber(){
-    Scanner scan = new Scanner(System.in);  
-    System.out.println("Enter first side");
-
-    String side1 = scan.nextLine(); 
-    System.out.println("Enter second side");
-    String side2 = scan.nextLine(); 
-
-    System.out.println("Enter second side");
-    scan.close();
-
+    System.out.println("Enter side");
+     }
+  public int perimeter(int a, int b, int c) {
+    return a+b+c;
   }
-  public void animalSound() {
-    System.out.println("The animal makes a sound");
+  public double area(int a, int b, int c) {
+    return 0.0;
   }
 }
 
-class Triangle extends Shape {
-  int a, b, c;
-  public void animalSound() {
-    System.out.println("The pig says: wee wee");
-  }
-}
 
-class Dog extends Shape {
-  public void animalSound() {
-    System.out.println("The dog says: bow wow");
+
+class Dog extends Triangle {
+  public int perimeter(int a, int b, int c) {
+    return a + b + c;
+    
+
+  }
+  public double area(int a, int b, int c) {
+    double area, half;
+    half = (a + b + c)/2;
+    area = Math.sqrt(half* (half - a)*(half - b)*(half - c));
+    return area;
   }
 }
 
 class Main {
   public static void main(String[] args) {
-    Shape shape = new Shape();  // Create a Animal object
-    Shape triangle = new Triangle();  // Create a Pig object
-    Shape myDog = new Dog();  // Create a Dog object
-    shape.animalSound();
-    shape.askNumber();
-    triangle.animalSound();
-    myDog.animalSound();
+    int p;
+    double area;
+    Triangle triangle = new Triangle();  // Create a Pig object
+    Triangle myDog = new Dog();  // Create a Dog object
+    Scanner scan = new Scanner(System.in);  
+    triangle.askNumber();
+    triangle.a  = scan.nextInt(); 
+    triangle.b = scan.nextInt(); 
+    triangle.c = scan.nextInt(); 
+    scan.close();
+    
+    p = myDog.perimeter(triangle.a, triangle.b,triangle.c);
+    System.out.println("Perimeter is: "+p);
+    area = myDog.area(triangle.a, triangle.b,triangle.c);
+    System.out.println("Area is: "+ area);
+
   }
 }

@@ -1,12 +1,6 @@
-import javax.swing.*;  
 import java.awt.*;
-
-
-import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JFrame;
+import java.awt.event.*;
+import javax.swing.*;
 
 
 public class HW implements ActionListener 
@@ -17,12 +11,17 @@ public class HW implements ActionListener
     JLabel label = new JLabel();
     JLabel label1 = new JLabel();
     JLabel label2 = new JLabel();
+
+    private ButtonGroup buttonGroup;
      
 
     public HW() {
         JRadioButton add = new JRadioButton("Add");
+        add.setActionCommand("+");
         JRadioButton subtract = new JRadioButton("Subtract");
+        subtract.setActionCommand("-");
         JRadioButton multiply = new JRadioButton("Multiply");
+        multiply.setActionCommand("*");
         
         JButton calculate =new JButton("Calculate");  
     
@@ -58,7 +57,8 @@ public class HW implements ActionListener
         calculate.setBackground(myWhite);
         calculate.setFont(new Font("TimesRoman", Font.PLAIN, 20)); 
         calculate.addActionListener(this);
-    
+
+
     
         frame.add(label);
         frame.add(label1);
@@ -70,6 +70,14 @@ public class HW implements ActionListener
         frame.add(subtract);   
         frame.add(multiply); 
         frame.add(calculate);   
+
+
+        buttonGroup = new ButtonGroup();
+ 
+        //add radio buttons
+        buttonGroup.add(add);
+        buttonGroup.add(multiply);
+        buttonGroup.add(subtract);
     
         frame.setVisible(true);
     }
@@ -78,8 +86,38 @@ public class HW implements ActionListener
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("You have clicked the button");
-    }
+       // String a = t1.getText();
+
+        if (t1.getText().isEmpty() || t2.getText().isEmpty() || t3.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Enter three numbers", "Error", JOptionPane.ERROR_MESSAGE);
+        } 
+        
+        
+        
+        else {
+            int num1 = Integer.parseInt(t1.getText());
+            int num2 = Integer.parseInt(t2.getText());
+            int num3 = Integer.parseInt(t3.getText());
+            int result = 0;
+
+            String selection = buttonGroup.getSelection().getActionCommand();
+
+            if (selection == "+"){ 
+                result = num1+num2+num3;
+            }else if (selection == "-"){
+                result = num1-num2-num3;
+            }
+            else{
+                System.out.println("Select an action");                
+            }
+
+            System.out.println(result);
+
+           
+        }
+
+        }
+      
      
     public static void main(String args[]){
         HW test = new HW();

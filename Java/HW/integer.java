@@ -1,7 +1,7 @@
 
 import javax.swing.*;
 
-public class integer{
+public class integer extends HW{
     public static boolean isInteger(JTextField textField) {
         try {
             Integer.parseInt(textField.getText());

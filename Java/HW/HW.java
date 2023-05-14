@@ -5,7 +5,7 @@ import javax.swing.*;
 public class HW implements ActionListener 
 {  
     Color myWhite = new Color(220, 255, 255);
-    JFrame frame = new JFrame("24-04");  
+    JFrame frame = new JFrame("calculator calculate");  
     JTextField t1,t2, t3;  
     JLabel label = new JLabel();
     JLabel label1 = new JLabel();
@@ -53,6 +53,7 @@ public class HW implements ActionListener
         JRadioButton add = new JRadioButton("Add");
         JRadioButton subtract = new JRadioButton("Subtract");
         JRadioButton multiply = new JRadioButton("Multiply");
+
         
         add.setBounds(15, 110, 50, 20);
         subtract.setBounds(80, 110, 85, 20);
@@ -65,6 +66,11 @@ public class HW implements ActionListener
         add.setBackground(myWhite);
         subtract.setBackground(myWhite);
         multiply.setBackground(myWhite);
+
+        add.setActionCommand("+");
+        subtract.setActionCommand("-");
+        multiply.setActionCommand("*");
+        
 
 //CALCULATE
         JButton calculate =new JButton("Calculate");  
@@ -95,8 +101,6 @@ public class HW implements ActionListener
         frame.setVisible(true);
     }
 
-
-
    
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -104,7 +108,7 @@ public class HW implements ActionListener
             JOptionPane.showMessageDialog(null, "Enter three numbers", "Error", JOptionPane.ERROR_MESSAGE);
         }
         else if (notInteger(t1) || notInteger(t2)||notInteger(t3)) {
-            System.out.println("Values MUST be INTEGERS");
+            JOptionPane.showMessageDialog(null, "Values MUST be INTEGERS", "Error", JOptionPane.ERROR_MESSAGE);
         }      
         else {
             int num1 = Integer.parseInt(t1.getText());
@@ -112,7 +116,9 @@ public class HW implements ActionListener
             int num3 = Integer.parseInt(t3.getText());
             int result = 0;
 
-            String selection = buttonGroup.getSelection().getActionCommand();
+            ButtonModel selection1 = buttonGroup.getSelection();
+            if (selection1 != null){
+                String selection = buttonGroup.getSelection().getActionCommand();
 
             if (selection == "+"){ 
                 result = num1+num2+num3;
@@ -122,17 +128,13 @@ public class HW implements ActionListener
             else if (selection == "*"){
                 result = num1*num2*num3;
             }
+            result_Label.setText("Result: "+result);
+        }
             else{
-                System.out.println("Select an action");                
-            }
-
-            System.out.println(result);
-
-           
-        }
-        }
+                JOptionPane.showMessageDialog(null, "Select an action", "Select", JOptionPane.ERROR_MESSAGE);    
+            }           
+        }}
       
-
 
     class CustomWindowAdapter extends WindowAdapter {
             @Override
@@ -154,9 +156,7 @@ public class HW implements ActionListener
         }
 
 
-
     public static void main(String args[]){
-        HW test = new HW();
-        
+        HW test = new HW();   
     }
 }

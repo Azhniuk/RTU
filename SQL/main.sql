@@ -1,0 +1,1 @@
+SELECT * FROM Suicides_in_India

@@ -1,0 +1,9 @@
+﻿  Log.cpp
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis\Player.h(11,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Log.cpp')
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis\Player.h(12,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Log.cpp')
+  
+MSVCRTD.lib(exe_winmain.obj) : error LNK2019: unresolved external symbol WinMain referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis\x64\Debug\Tennis.exe : fatal error LNK1120: 1 unresolved externals

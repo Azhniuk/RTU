@@ -1,0 +1,8 @@
+﻿  main.cpp
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis Player\Player.h(11,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis Player\Player.h(12,30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+  Tennis Player.vcxproj -> C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis Player\x64\Debug\Tennis Player.exe

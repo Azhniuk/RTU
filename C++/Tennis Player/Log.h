@@ -8,15 +8,15 @@ class Log
 public:
     void init() { _count = 0; }
 
-    size_t get_count() { return _count; }
+    size_t get_count() const { return _count; }
 
     // Returns stored abstraction object by its index or default object if index is invalid
-    Player get_item(size_t i) { return (i < _count) ? _items[i] : Player{}; }
+    Player get_item(size_t i) const { return (i < _count) ? _items[i] : Player{}; }
 
     // new abstraction object in an array _items
-    void add_item(double _height, double _weight, string _nick, int _experience, bool _play);
+    void add_item(double height, double weight, Player::Nick nicks, Player::Experience experiences, bool play);
 
-    Player find_item(Player query);
+    Player find_item(const Player& query) const;
 
 private:
     static const size_t MAX_SIZE{ 10 };
@@ -26,5 +26,6 @@ private:
 
     size_t _count;
 };
+
 
 #endif

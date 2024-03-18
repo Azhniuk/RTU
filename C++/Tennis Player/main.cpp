@@ -6,9 +6,15 @@
 
 using namespace std;
 
-void show(Player item)
+void show(const Player & item)
 {
-    cout <<"Player is: "<< item.get_height() <<"cm, "<< item.get_weight() << "kg.\nName: " << item.get_nick_str() << "; Experience:" << item.get_experience_str() << " years." << item.get_play() <<" - if plays\n" << endl;
+    cout <<"Player is: "
+        << item.get_height() <<"cm, "
+        << item.get_weight() << "kg.\nName: " 
+        << item.get_nick_str() 
+        << "; Experience:" << item.get_experience_str() 
+        << " years." << item.get_play() <<" - if plays\n" 
+        << endl;
 }
 
 Player max_weight(const Log& log)
@@ -40,8 +46,9 @@ double average_height(const Log& log)
 int main()
 {
     Log log;
+   // Log() : _count{ 0U } { };
 
-    log.init();
+   // log.init();
 
     // _height, double _weight, string _nick, int _experience, bool _play
     log.add_item(167.5, 80.7, Player::Nick::Andris, Player::Experience::five, true);

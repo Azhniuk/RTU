@@ -7,13 +7,19 @@ using namespace std;
 class Player
 {
 public:
-	enum class Nick { ANY, Andris, Oleh, Dita, Janis, Ihor, Ivars };
-	static constexpr string_view Nick_str[]{ "Any", "Andris", "Oleh", "Dita", "Janis", "Ihor", "Ivars" };
+	Player()
+		: _height{ 0.0 }, _weight{ 0.0 }, _nicks{ Nick::ANY }, _experiences{ Experience::ANY }, _play{ false } 
+	{}
+	
+	//enum class Nick { ANY, Andris, Oleh, Dita, Janis, Ihor, Ivars };
+	//static constexpr string_view Nick_str[]{ "Any", "Andris", "Oleh", "Dita", "Janis", "Ihor", "Ivars" };
 
-	enum class Experience { ANY, zero, two, three, five, ten };
-	static constexpr string_view Experience_str[]{ "Any", "0", "2", "3", "5", "10" };
+	//enum class Experience { ANY, zero, two, three, five, ten };
+	//static constexpr string_view Experience_str[]{ "Any", "0", "2", "3", "5", "10" };
 
-	void init(double height, double weight, Player::Nick nicks, Player::Experience experiences, bool play);
+	Player(double height, double weight, Nick nicks, Experience experiences, bool play);
+	
+
 	float get_height() const { return _height; }
 	float get_weight() const { return _weight; }
 	bool get_play() const { return _play; }

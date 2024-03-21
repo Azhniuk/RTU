@@ -1,13 +1,12 @@
 #include "Log.h"
 #include <cmath>
 
-void Log::add_item(double height, double weight, Player::Nick nicks, Player::Experience experiences, bool play)
-{
-    Player new_item;
-    new_item.init(height, weight, nicks, experiences, play);
 
-    if (find_item(new_item).get_height() == 0 && _count < Log::MAX_SIZE)
+void Log::add_item(Player::Nick nick, bool play, const PlayerSpec& spec)
+{
+     if (_count < Log::MAX_SIZE)
     {
+         Player new_item(nick, play, spec);
         _items[_count] = new_item;
         _count++;
     }
@@ -15,12 +14,10 @@ void Log::add_item(double height, double weight, Player::Nick nicks, Player::Exp
 
 Player Log::find_item(const Player& query) const
 {
+    auto query_spec{ query.get_spec() }; 
+
     for (size_t i = 0; i < _count; i++)
     {
-        // for integer or boolean 
-        if (query.get_experience() != Player::Experience::ANY
-            && query.get_experience() != _items[i].get_experience())
-            continue;
         if (query.get_play() != 0
             && query.get_play() != _items[i].get_play())
             continue;
@@ -30,18 +27,82 @@ Player Log::find_item(const Player& query) const
             && query.get_nick() != _items[i].get_nick())
             continue;
 
-        // for double
-        constexpr double epsil{ 0.005 };
-        if (query.get_height() != 0.0
-            && epsil < std::abs(query.get_height() - _items[i].get_height()))
-            continue;
 
-        if (query.get_weight() != 0.0
-            && epsil < std::abs(query.get_weight() - _items[i].get_weight()))
-            continue;
+        auto item_spec{ _items[i].get_spec() };
+
+       // for experience
+       if (query_spec.get_experience() != PlayerSpec::Experience::ANY
+           && query_spec.get_experience() != item_spec.get_experience())
+                continue;
+
+       //for height
+        constexpr double epsil{ 0.005 };
+       if (query_spec.get_height() != 0.0
+           && epsil < std::abs(query_spec.get_height() - item_spec.get_height()))
+           continue;
+
+       //for weight
+       if (query_spec.get_weight() != 0.0
+           && epsil < std::abs(query_spec.get_weight() - item_spec.get_weight()))
+           continue;
+
+       //for sport
+       if (query_spec.get_sport() != PlayerSpec::Sport::ANY
+           && query_spec.get_sport() != item_spec.get_sport())
+           continue;
 
         return _items[i];
     }
 
     return Player{};
 }
+
+
+Player Log::find_item(const PlayerSpec& query_spec) const
+{
+    for (size_t i = 0; i < _count; i++)
+    {
+        auto item_spec{ _items[i].get_spec() };
+
+        // for experience
+        if (query_spec.get_experience() != PlayerSpec::Experience::ANY
+            && query_spec.get_experience() != item_spec.get_experience())
+            continue;
+
+        //for height
+        constexpr double epsil{ 0.005 };
+        if (query_spec.get_height() != 0.0
+            && epsil < std::abs(query_spec.get_height() - item_spec.get_height()))
+            continue;
+
+        //for weight
+        if (query_spec.get_weight() != 0.0
+            && epsil < std::abs(query_spec.get_weight() - item_spec.get_weight()))
+            continue;
+
+        //for sport
+        if (query_spec.get_sport() != PlayerSpec::Sport::ANY
+            && query_spec.get_sport() != item_spec.get_sport())
+            continue;
+
+
+        return _items[i];
+    }
+
+    return Player{}; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*  // */
+
+/* // */

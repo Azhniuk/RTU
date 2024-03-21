@@ -4,36 +4,33 @@
 #include <string>
 using namespace std;
 
+#include "PlayerSpec.h"
+
 class Player
 {
 public:
-	Player()
-		: _height{ 0.0 }, _weight{ 0.0 }, _nicks{ Nick::ANY }, _experiences{ Experience::ANY }, _play{ false } 
+	Player(): 
+		_nick{ Nick::ANY }, 
+		_play{ false }, 
+		_spec{ }
 	{}
 	
-	//enum class Nick { ANY, Andris, Oleh, Dita, Janis, Ihor, Ivars };
-	//static constexpr string_view Nick_str[]{ "Any", "Andris", "Oleh", "Dita", "Janis", "Ihor", "Ivars" };
+	enum class Nick { ANY, Andris, Oleh, Dita, Janis, Ihor, Ivars };
+	static constexpr string_view Nick_str[]{ "Any", "Andris", "Oleh", "Dita", "Janis", "Ihor", "Ivars" };
 
-	//enum class Experience { ANY, zero, two, three, five, ten };
-	//static constexpr string_view Experience_str[]{ "Any", "0", "2", "3", "5", "10" };
-
-	Player(double height, double weight, Nick nicks, Experience experiences, bool play);
+	Player( Nick nick, bool play, const PlayerSpec& spec);
 	
 
-	float get_height() const { return _height; }
-	float get_weight() const { return _weight; }
 	bool get_play() const { return _play; }
-	Player::Nick get_nick() const { return _nicks; }
-	Player::Experience get_experience() const { return _experiences; }
-	string_view get_nick_str() const { return Nick_str[(size_t)_nicks]; }
-	string_view get_experience_str() const { return Experience_str[(size_t)_experiences]; }
+	Player::Nick get_nick() const { return _nick; }
+	string_view get_nick_str() const { return Nick_str[(size_t)_nick]; }
+	const PlayerSpec& get_spec() const { return _spec; }
+
 
 private:
-	Player::Nick _nicks;
-	Player::Experience _experiences;
-	double _height;
-	double _weight;
+	Player::Nick _nick;
 	bool _play;
+	PlayerSpec _spec;
 };
 
 #endif

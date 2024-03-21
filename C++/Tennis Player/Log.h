@@ -2,6 +2,7 @@
 #define LOG
 
 #include "Player.h" 
+#include "PlayerSpec.h" 
 
 class Log
 {
@@ -10,13 +11,12 @@ public:
 
     size_t get_count() const { return _count; }
 
-    // Returns stored abstraction object by its index or default object if index is invalid
     Player get_item(size_t i) const { return (i < _count) ? _items[i] : Player{}; }
 
-    // new abstraction object in an array _items
-    void add_item(double height, double weight, Player::Nick nicks, Player::Experience experiences, bool play);
+    void add_item(Player::Nick nick, bool play, const PlayerSpec& spec);
 
     Player find_item(const Player& query) const;
+    Player find_item(const PlayerSpec& spec_query) const;
 
 private:
     static const size_t MAX_SIZE{ 10 };

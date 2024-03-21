@@ -1,10 +1,11 @@
 #include "Player.h"
 
-void Player::init(double height, double weight, Player::Nick nicks, Player::Experience experiences, bool play)
-{
-	_height = height;
-	_weight = weight;
-	_nicks = nicks;
-	_experiences = experiences;
+Player::Player(Player::Nick nick, bool play, const PlayerSpec& spec)
+{	
+	_nick = nick;
 	_play = play;
-}
+	_spec = spec;
+	}
+
+
+//ctrl+k+c   ctrl+k+u -  multiple comment

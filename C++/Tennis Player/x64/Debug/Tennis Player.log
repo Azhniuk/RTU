@@ -1,8 +1,168 @@
-﻿  main.cpp
-C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(17,36): warning C4244: 'return': conversion from 'const double' to 'float', possible loss of data
+﻿  Log.cpp
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\PlayerSpec.h(28,39): warning C4244: 'return': conversion from 'const double' to 'float', possible loss of data
+  (compiling source file 'Log.cpp')
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\PlayerSpec.h(29,39): warning C4244: 'return': conversion from 'const double' to 'float', possible loss of data
+  (compiling source file 'Log.cpp')
+  
+  main.cpp
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\PlayerSpec.h(28,39): warning C4244: 'return': conversion from 'const double' to 'float', possible loss of data
   (compiling source file 'main.cpp')
   
-C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(18,36): warning C4244: 'return': conversion from 'const double' to 'float', possible loss of data
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\PlayerSpec.h(29,39): warning C4244: 'return': conversion from 'const double' to 'float', possible loss of data
   (compiling source file 'main.cpp')
   
-  Tennis Player.vcxproj -> C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\x64\Debug\Tennis Player.exe
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(12,17): error C2039: 'get_height': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(13,17): error C2039: 'get_weight': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(15,36): error C2039: 'get_experience_str': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(25,29): error C2039: 'get_weight': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(25,48): error C2039: 'get_weight': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(39,32): error C2039: 'get_height': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(54,61): error C3083: 'Experience': the symbol to the left of a '::' must be a type
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(54,73): error C2039: 'five': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(54,73): error C2065: 'five': undeclared identifier
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(55,57): error C3083: 'Experience': the symbol to the left of a '::' must be a type
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(55,69): error C2039: 'two': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(55,69): error C2065: 'two': undeclared identifier
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(56,59): error C3083: 'Experience': the symbol to the left of a '::' must be a type
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(56,71): error C2039: 'three': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(56,71): error C2065: 'three': undeclared identifier
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(57,56): error C3083: 'Experience': the symbol to the left of a '::' must be a type
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(57,68): error C2039: 'zero': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(57,68): error C2065: 'zero': undeclared identifier
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(58,60): error C3083: 'Experience': the symbol to the left of a '::' must be a type
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(58,72): error C2039: 'ten': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(58,72): error C2065: 'ten': undeclared identifier
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(59,58): error C3083: 'Experience': the symbol to the left of a '::' must be a type
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(59,70): error C2039: 'three': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(59,70): error C2065: 'three': undeclared identifier
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(65,9): error C2039: 'init': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(65,57): error C3083: 'Experience': the symbol to the left of a '::' must be a type
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(65,69): error C2039: 'five': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(65,69): error C2065: 'five': undeclared identifier
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(70,9): error C2039: 'init': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(70,54): error C3083: 'Experience': the symbol to the left of a '::' must be a type
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(70,66): error C2039: 'three': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(70,66): error C2065: 'three': undeclared identifier
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(75,9): error C2039: 'init': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(75,57): error C3083: 'Experience': the symbol to the left of a '::' must be a type
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(75,69): error C2039: 'five': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(75,69): error C2065: 'five': undeclared identifier
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(79,5): error C2039: 'get_experience': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(79,5): error C3083: 'Experience': the symbol to the left of a '::' must be a type
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(79,5): error C2039: 'five': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(79,5): error C2065: 'five': undeclared identifier
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(81,9): error C2039: 'init': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(81,55): error C3083: 'Experience': the symbol to the left of a '::' must be a type
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(81,67): error C2039: 'five': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(81,67): error C2065: 'five': undeclared identifier
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(84,5): error C2039: 'get_height': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(87,9): error C2039: 'init': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(87,51): error C3083: 'Experience': the symbol to the left of a '::' must be a type
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(87,63): error C2039: 'five': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(87,63): error C2065: 'five': undeclared identifier
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(89,5): error C2039: 'get_experience': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(89,5): error C3083: 'Experience': the symbol to the left of a '::' must be a type
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(89,5): error C2039: 'ANY': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(89,5): error C2065: 'ANY': undeclared identifier
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(91,56): error C3083: 'Experience': the symbol to the left of a '::' must be a type
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(91,68): error C2039: 'ten': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(91,68): error C2065: 'ten': undeclared identifier
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(92,56): error C3083: 'Experience': the symbol to the left of a '::' must be a type
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(92,68): error C2039: 'ten': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(9,7):
+  see declaration of 'Player'
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(92,68): error C2065: 'ten': undeclared identifier
+  PlayerSpec.cpp
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\PlayerSpec.h(28,39): warning C4244: 'return': conversion from 'const double' to 'float', possible loss of data
+  (compiling source file 'PlayerSpec.cpp')
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\PlayerSpec.h(29,39): warning C4244: 'return': conversion from 'const double' to 'float', possible loss of data
+  (compiling source file 'PlayerSpec.cpp')
+  
+  Generating Code...

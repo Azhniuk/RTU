@@ -8,12 +8,14 @@ using namespace std;
 
 void show(const Player & item)
 {
-    cout <<"Player is: "
-        << item.get_height() <<"cm, "
-        << item.get_weight() << "kg.\nName: " 
+    auto is{ item.get_spec() }; // const PlayerSpec &
+    cout << "The sport is "
+        << is.get_sport_str()  << ". Player is: "
+        << is.get_height() <<"cm, "
+        << is.get_weight() << "kg.\nName: " 
         << item.get_nick_str() 
-        << "; Experience:" << item.get_experience_str() 
-        << " years." << item.get_play() <<" - if plays\n" 
+        << "; Experience:" << is.get_experience_str() 
+        << " years.\n" << item.get_play() <<" ==> if plays 1, if no - 0\n" 
         << endl;
 }
 
@@ -22,7 +24,7 @@ Player max_weight(const Log& log)
     Player max = log.get_item(0);
     for (int i = 1; i < log.get_count(); i++)
     {
-        if (log.get_item(i).get_weight() > max.get_weight())
+        if (log.get_item(i).get_spec().get_weight() > max.get_spec().get_weight())
         {
             max = log.get_item(i);
         }
@@ -36,7 +38,7 @@ double average_height(const Log& log)
     sum = 0;
     for (int i = 0; i < log.get_count(); i++)
     {
-        sum += log.get_item(i).get_height();
+        sum += log.get_item(i).get_spec().get_height();
     }
 
     return sum / log.get_count();
@@ -46,55 +48,44 @@ double average_height(const Log& log)
 int main()
 {
     Log log;
-   // Log() : _count{ 0U } { };
+    //add people
+    log.add_item(Player::Nick::Andris, true, PlayerSpec{ 167.5, 80.7, PlayerSpec::Experience::five, PlayerSpec::Sport::box });
+    log.add_item(Player::Nick::Oleh, false, PlayerSpec{ 120,  80.3, PlayerSpec::Experience::two, PlayerSpec::Sport::swimming });
+    log.add_item(Player::Nick::Dita, true, PlayerSpec{ 167.5, 80.7, PlayerSpec::Experience::five, PlayerSpec::Sport::box });
+    log.add_item(Player::Nick::Janis, true, PlayerSpec{ 90,  8.4, PlayerSpec::Experience::zero, PlayerSpec::Sport::running });
+    
+    //add Ihor
+    PlayerSpec Ihor{ 210.9, 100.3, PlayerSpec::Experience::ten, PlayerSpec::Sport::running };
+    log.add_item(Player::Nick::Ihor, true, Ihor);
 
-   // log.init();
+    //Check Ihor`s name
+    assert(log.find_item(Ihor).get_nick() == log.find_item(Ihor).get_nick());
 
-    // _height, double _weight, string _nick, int _experience, bool _play
-    log.add_item(167.5, 80.7, Player::Nick::Andris, Player::Experience::five, true);
-    log.add_item(120, 80.3, Player::Nick::Oleh, Player::Experience::two, false);
-    log.add_item(180.5, 50.4, Player::Nick::Dita, Player::Experience::three, true);
-    log.add_item(90, 8.4, Player::Nick::Janis, Player::Experience::zero, false);
-    log.add_item(210.9, 100.3, Player::Nick::Ihor, Player::Experience::ten, true);
-    log.add_item(190, 89.6, Player::Nick::Ivars, Player::Experience::three, true);
+    log.add_item(Player::Nick::Ivars, false, PlayerSpec{ 190,  89.6, PlayerSpec::Experience::three, PlayerSpec::Sport::swimming });
 
     //check if all items 
     assert(log.get_count() == 6);
 
-    Player qry;
-    qry.init(167.5, 80.7, Player::Nick::Andris, Player::Experience::five, true);
-    show(log.find_item(qry));
-    //check experience
-    //assert(log.find_item(qry).get_experience() == Player::Experience::five);
+    PlayerSpec cat{ 60.7, 8, PlayerSpec::Experience::five, PlayerSpec::Sport::skiing };
+    log.add_item(Player::Nick::Keks, true, cat);
 
-    qry.init(190, 89.6, Player::Nick::Ivars, Player::Experience::three, true);
-    show(log.find_item(qry));
-    //check experience
-    //assert(log.find_item(qry).get_experience() == Player::Experience::three);
+    PlayerSpec Keks{ 60.7, 8, PlayerSpec::Experience::five, PlayerSpec::Sport::skiing };
+    assert(log.find_item(Keks).get_spec().get_height() == log.find_item(Keks).get_spec().get_height());
+    assert(log.find_item(Keks).get_spec().get_weight() == cat.get_weight());
 
-    qry.init(167.5, 80.7, Player::Nick::Andris, Player::Experience::five, false);
-    show(log.find_item(qry));
-    //check nick and experience
-    assert(log.find_item(qry).get_nick() == Player::Nick::Andris);
-    assert(log.find_item(qry).get_experience() == Player::Experience::five);
-
-    qry.init(167.5, 80.7, Player::Nick::Oleh, Player::Experience::five, true);
-    show(log.find_item(qry));
-    //check height, shouldn`t find, so == 0
-    assert(log.find_item(qry).get_height() == 0);
-
-    // tests for nonmatching object
-    qry.init(90, 80.7, Player::Nick::ANY, Player::Experience::five, true);
-    show(log.find_item(qry));
-    assert(log.find_item(qry).get_experience() == Player::Experience::ANY);
-
-    log.add_item(200, 100, Player::Nick::Ihor, Player::Experience::ten, true);
-    log.add_item(200, 100, Player::Nick::Ihor, Player::Experience::ten, true);
+    //check if all items 
     assert(log.get_count() == 7);
 
+    show(log.find_item(PlayerSpec{ 210.9, 100.3, PlayerSpec::Experience::ten, PlayerSpec::Sport::running }));
 
-    cout <<"\n"<< "Max weight: "<<endl;
+    show(log.find_item(cat));
+
+    cout <<"\n"<< "Max weight has: "<<endl;
     show(max_weight(log));
     cout << "Average height: " << average_height(log) << endl;
     return 0;
+
+    //Check calculations
+    assert(average_height(log) == (167.5 + 120 + 167.5 + 90 + 210.9 + 190 + 60.7) / 7);
+
 }

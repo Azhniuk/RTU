@@ -7,7 +7,7 @@
 class Log
 {
 public:
-    void init() { _count = 0; }
+    Log(): _count{0} {}
 
     size_t get_count() const { return _count; }
 

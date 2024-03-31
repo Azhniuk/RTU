@@ -15,8 +15,8 @@ public:
 		_spec{ }
 	{}
 	
-	enum class Nick { ANY, Andris, Oleh, Dita, Janis, Ihor, Ivars };
-	static constexpr string_view Nick_str[]{ "Any", "Andris", "Oleh", "Dita", "Janis", "Ihor", "Ivars" };
+	enum class Nick { ANY, Andris, Oleh, Dita, Janis, Ihor, Ivars, Keks, Andrii };
+	static constexpr string_view Nick_str[]{ "Any", "Andris", "Oleh", "Dita", "Janis", "Ihor", "Ivars", "Keks", "Andrii"};
 
 	Player( Nick nick, bool play, const PlayerSpec& spec);
 	

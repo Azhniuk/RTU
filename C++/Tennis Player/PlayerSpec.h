@@ -1,6 +1,6 @@
 #pragma once
 
-#include <cstddef> // for std::size_t
+#include <cstddef>
 #include <string>
 using namespace std;
 

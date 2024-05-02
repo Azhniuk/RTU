@@ -2,12 +2,14 @@
 
 #include <cstddef>
 #include <string>
+#include <memory>
 using namespace std;
 
 
 class PlayerSpec
 {
 public:
+    bool matches(const PlayerSpec& otherSpec) const;
 
     enum class Experience { ANY, zero, two, three, five, ten };
     static constexpr string_view Experience_str[]{ "Any", "0", "2", "3", "5", "10" };
@@ -39,4 +41,6 @@ private:
     PlayerSpec::Experience _experiences;
     PlayerSpec::Sport _sports;
 };
+
+typedef std::shared_ptr<const PlayerSpec> spcPlayerSpec;
 

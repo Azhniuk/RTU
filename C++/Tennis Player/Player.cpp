@@ -1,6 +1,6 @@
 #include "Player.h"
 
-Player::Player(Player::Nick nick, bool play, const PlayerSpec& spec)
+Player::Player(Player::Nick nick, bool play, spcPlayerSpec spec)
 {	
 	_nick = nick;
 	_play = play;

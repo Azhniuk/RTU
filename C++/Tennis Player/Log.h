@@ -1,6 +1,7 @@
 #ifndef LOG
 #define LOG
 
+#include <memory>
 #include "Player.h" 
 #include "PlayerSpec.h" 
 
@@ -13,7 +14,8 @@ public:
 
     Player get_item(size_t i) const { return (i < _count) ? _items[i] : Player{}; }
 
-    void add_item(Player::Nick nick, bool play, const PlayerSpec& spec);
+    void add_item(Player::Nick nick, bool play, spcPlayerSpec spec);
+
 
     Player find_item(const Player& query) const;
     Player find_item(const PlayerSpec& spec_query) const;

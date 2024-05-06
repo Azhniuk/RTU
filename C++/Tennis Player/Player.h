@@ -2,9 +2,10 @@
 #ifndef PLAYER
 #define PLAYER
 #include <string>
+#include <iostream>
+#include "PlayerSpec.h"
 using namespace std;
 
-#include "PlayerSpec.h"
 
 class Player
 {
@@ -15,12 +16,14 @@ public:
 
 	Player( Nick nick, bool play, spcPlayerSpec spec);
 	
-
 	bool get_play() const { return _play; }
 	Player::Nick get_nick() const { return _nick; }
 	string_view get_nick_str() const { return Nick_str[(size_t)_nick]; }
-	//const PlayerSpec& get_spec() const { return _spec; }
 	spcPlayerSpec get_spec() const { return _spec; }
+
+	void send_to( ostream& os) const;
+	void recv_from(istream& is);
+	friend  istream& operator>>(istream& is, Player& item);
 
 
 private:
@@ -28,5 +31,9 @@ private:
 	bool _play;
 	spcPlayerSpec _spec;
 };
+
+ostream& operator<<( ostream& os, Player::Nick nick);
+ostream& operator<<( ostream& os, const Player& item);
+//istream& operator>>(istream& is, Player::Nick & nick);
 
 #endif

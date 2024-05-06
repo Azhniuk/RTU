@@ -1,5 +1,6 @@
 #include "Log.h"
 #include <cmath>
+#include <fstream>
 
 
 void Log::add_item(Player::Nick nick, bool play, spcPlayerSpec spec)
@@ -53,6 +54,36 @@ Player Log::find_item(const PlayerSpec& query_spec) const
     }
 
     return Player{}; 
+}
+
+void Log::save(const std::string& csv_file_name) const {
+    ofstream os(csv_file_name);
+
+    if (!os) {
+        throw std::invalid_argument("");
+        return;
+    }
+    for (size_t i = 0; i < _count; i++)
+        os << _items[i] << "\n";
+}
+
+void Log::load(const std::string& csv_file_name) {
+    std::ifstream is(csv_file_name);
+    if (!is) {
+        throw ("Cannot open file");
+        return;
+    }
+
+    Player Players;
+    while (is >> Players) {
+        if (_count < MAX_SIZE) {
+            _items[_count++] = Players;
+        }
+        else {
+            cout << "No more space to load. " << endl;
+            break;
+        }
+    }
 }
 
 

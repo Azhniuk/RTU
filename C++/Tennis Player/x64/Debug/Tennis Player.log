@@ -1,2 +1,19 @@
 ﻿  main.cpp
-  Tennis Player.vcxproj -> C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\x64\Debug\Tennis Player.exe
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\PlayerSpec.h(30,39): warning C4244: 'return': conversion from 'const double' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\PlayerSpec.h(31,39): warning C4244: 'return': conversion from 'const double' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(12,18): error C2039: 'c_str': is not a member of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\Player.h(10,7):
+  see declaration of 'Player'
+  C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(12,18):
+  the template instantiation context (the oldest one first) is
+  	C:\Users\Sofiia\Documents\GitHub\RTU\C++\Tennis player\main.cpp(84,4):
+  	see reference to function template instantiation 'void show<Player>(const T &)' being compiled
+          with
+          [
+              T=Player
+          ]
+  

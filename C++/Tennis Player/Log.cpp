@@ -1,91 +1,38 @@
 #include "Log.h"
 #include <cmath>
-#include <fstream>
+//functions 
 
-
-void Log::add_item(Player::Nick nick, bool play, spcPlayerSpec spec)
+void Log::add_item(const Player& new_item)
 {
-     if (_count < Log::MAX_SIZE)
-    {
-         Player new_item(nick, play, spec);
-        _items[_count] = new_item;
-        _count++;
-    }
+    auto found{ this->find_all_items(*new_item.get_spec()) };
+
+    for (auto found_item : found)
+        if (found_item.get_nick() == new_item.get_nick())
+            return;
+
+    _items.push_back(new_item);
 }
 
-Player Log::find_item(const Player& query) const
+Player Log::find_item(const PlayerSpec& otherSpec) const
 {
-    auto query_spec_p{ query.get_spec() };
+    auto found{ this->find_all_items(otherSpec) };
 
-    // Check match of all Player properties:
-    for (size_t i = 0; i < _count; i++)
-    {
-        if (query.get_play() != 0
-            && query.get_play() != _items[i].get_play())
-            continue;
-
-        // for string
-        if (query.get_nick() != Player::Nick::ANY
-            && query.get_nick() != _items[i].get_nick())
-            continue;
-
-        auto item_spec_p{ _items[i].get_spec() };
-        if (query_spec_p && item_spec_p && item_spec_p->matches(*query_spec_p))
-        {
-            return _items[i];
-        }
-    }
+    if (!found.empty())
+        return found[0];
 
     return Player{};
 }
 
-
-Player Log::find_item(const PlayerSpec& query_spec) const
+vector<Player> Log::find_all_items(const PlayerSpec& otherSpec) const
 {
-    for (size_t i = 0; i < _count; i++)
-    {
-        auto item_spec_p{ _items[i].get_spec() };
+    vector<Player> found;
 
+    for (auto item : _items)
+        if (item.get_spec()->matches(otherSpec))
+            found.push_back(item);
 
-        if (item_spec_p && item_spec_p->matches(query_spec))
-        {
-            return _items[i];
-        }
-    }
-
-    return Player{}; 
+    return found; 
 }
-
-void Log::save(const std::string& csv_file_name) const {
-    ofstream os(csv_file_name);
-
-    if (!os) {
-        throw std::invalid_argument("");
-        return;
-    }
-    for (size_t i = 0; i < _count; i++)
-        os << _items[i] << "\n";
-}
-
-void Log::load(const std::string& csv_file_name) {
-    std::ifstream is(csv_file_name);
-    if (!is) {
-        throw ("Cannot open file");
-        return;
-    }
-
-    Player Players;
-    while (is >> Players) {
-        if (_count < MAX_SIZE) {
-            _items[_count++] = Players;
-        }
-        else {
-            cout << "No more space to load. " << endl;
-            break;
-        }
-    }
-}
-
 
 
 
